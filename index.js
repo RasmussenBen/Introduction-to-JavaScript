@@ -158,17 +158,15 @@ Use the game function below to do the following:
   
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
-
-function game(user, computer){
-  var computer = Math.random();
-  if (computer <= (1/3)) {
-    computer = "rock";
-  } else if (computer <= (2/3)) {
-    computer = "paper";
+let computerChoice = Math.random();
+  if (computerChoice <= (1/3)) {
+    computerChoice = "rock";
+  } else if (computerChoice <= (2/3)) {
+    computerChoice = "paper";
   } else {
-    computer = "scissors";
+    computerChoice = "scissors";
   }
-
+function game(user, computer){
   if (computer === "rock" && user === "paper") {
     return "you win!";
   } else if (computer === "rock" && user === "scissors") {
@@ -191,7 +189,7 @@ function game(user, computer){
     return "it's a tie"
   }
 }
-console.log('task 4:', game("rock", ));
+console.log('task 4:', `Computer picked ${computerChoice},`, game("rock", computerChoice));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
