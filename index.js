@@ -22,6 +22,9 @@ var votingAge = 20;
 if (votingAge >= 18) {
   console.log("True")
 }
+else {
+  console.log("False")
+}
 
 /*
 Task 1b - Values
@@ -34,9 +37,12 @@ Do the following:
    HINT: no function required
 */
 
-
-
-
+var thingOne = 3;
+var thingTwo = 5;
+while (thingOne < thingTwo) {
+  thingOne++;
+  console.log(thingOne);
+}
 
 /*
 Task 1c - Convert Strings to Numbers
@@ -49,8 +55,9 @@ Do the following:
    HINT: look up the Number method
 */
 
-
-
+var dummyString = "1999";
+Number(dummyString);
+console.log(dummyString);
 
 /*
 Task 1d - Multiply
@@ -64,7 +71,7 @@ Do the following:
 function multiply(a, b){
     return a * b;
   }
-console.log(multiply(1,3));
+console.log('task 1:', multiply(1,3));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -77,10 +84,10 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears(age){
+    return age * 7;
 }
-
+console.log('task 2:', dogYears(4));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -110,11 +117,26 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
+function hungryDog(weight, age){
+    if (age >= 1 && weight <= 5) {
+      return weight * 0.05;
+    } else if (age >= 1 && weight >= 6 && weight <= 10) {
+      return weight * 0.04;
+    } else if (age >= 1 && weight >= 11 && weight <= 15) {
+      return weight * 0.03;
+    } else if (age >= 1 && weight > 15) {
+      return weight * 0.02;
+    } else if (age < 1 && age >= 0.583) {
+      return weight * 0.4;
+    } else if (age < 0.583 && age >= 0.333) {
+      return weight * 0.05;
+    } else if (age < .333) {
+      return weight * 0.1;
+    } else {
+      return 'please try again';
+    }
   }
-
-
+console.log('task 3:', hungryDog(43, 4));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -138,10 +160,38 @@ Use the game function below to do the following:
 */
 
 function game(user, computer){
-    /*add your code here*/
+  var computer = Math.random();
+  if (computer <= (1/3)) {
+    computer = "rock";
+  } else if (computer <= (2/3)) {
+    computer = "paper";
+  } else {
+    computer = "scissors";
+  }
+
+  if (computer === "rock" && user === "paper") {
+    return "you win!";
+  } else if (computer === "rock" && user === "scissors") {
+    return "you lose!"
+  } else if (computer === "rock" && user === "rock") {
+    return "it's a tie"
+  }
+  else if (computer === "paper" && user === "scissors") {
+    return "you win!";
+  } else if (computer === "paper" && user === "rock") {
+    return "you lose!"
+  } else if (computer === "paper" && user === "paper") {
+    return "it's a tie"
+  }
+  else if (computer === "scissors" && user === "rock") {
+    return "you win!";
+  } else if (computer === "scissors" && user === "paper") {
+    return "you lose!"
+  } else if (computer === "scissors" && user === "scissors") {
+    return "it's a tie"
+  }
 }
-  
-  
+console.log('task 4:', game("paper"));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
